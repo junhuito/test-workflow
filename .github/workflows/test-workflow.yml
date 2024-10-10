@@ -8,10 +8,16 @@ on:
           type: environment
           required: true
   
+# jobs:
+#   print-tag:
+#     runs-on: ubuntu-latest
+#     if:  ${{ vars.AWS_REGION == 'ap-southeast-1' }} 
+#     steps:
+#       - name: Print the input tag to STDOUT
+#         run: echo  The tags are ${{ vars.AWS_REGION }} 
 jobs:
   print-tag:
     runs-on: ubuntu-latest
-    if:  ${{ vars.AWS_REGION == 'ap-southeast-1' }} 
     steps:
-      - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ vars.AWS_REGION }} 
+      - name: Print AWS_REGION
+        run: echo "AWS_REGION is ${{ vars.AWS_REGION }}"
