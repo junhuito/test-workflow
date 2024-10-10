@@ -18,6 +18,8 @@ on:
 jobs:
   print-tag:
     runs-on: ubuntu-latest
+    environment:
+        name: ${{ inputs.environment }}
     steps:
       - name: Print AWS_REGION
         run: echo "AWS_REGION is ${{ vars.AWS_REGION }}"
